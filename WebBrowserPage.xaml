@@ -1,0 +1,43 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="PhoneWebBrowserTest.WebBrowserPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <controls:WebBrowser
+                Grid.Row="0"
+                Name="browser"
+                IsScriptEnabled="true"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Source="/Assets/map.html">
+        </controls:WebBrowser>
+
+        <TextBlock x:Name="Memory" Width="200" Height="Auto" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="Red"/>
+        <Button x:Name="Blank" Width="Auto" Height="Auto" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="Blank_Click" Background="Black">
+            About:Blank
+        </Button>
+        <Button x:Name="Refresh" Width="Auto" Height="Auto" VerticalAlignment="Bottom" HorizontalAlignment="Center" Click="Refresh_Click" Background="Black">
+            Refresh
+        </Button>
+        <Button x:Name="Nav" Width="Auto" Height="Auto" VerticalAlignment="Bottom" HorizontalAlignment="Right" Click="Nav_Click" Background="Black">
+            Back
+        </Button>
+    </Grid>
+
+</phone:PhoneApplicationPage>

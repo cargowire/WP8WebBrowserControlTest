@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+    <meta charset="utf-8">
+    <title>Google Map</title>
+    <style>
+      @-ms-viewport {
+          width: device-width;
+          user-zoom:fixed;
+      }
+      html, body, #mapcontainer {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+      body {
+          -ms-touch-action:none;
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.14&sensor=false"></script>
+    <script type="text/javascript">
+        function initialize()
+        {
+            var mapOptions = {
+                zoom: 4,
+                disableDefaultUI: true,
+                center: new google.maps.LatLng(22.796439, -44.934082) /* Mid north atlantic */,
+                zoomControl: true,
+            }
+
+            var map = new google.maps.Map(document.getElementById('mapcontainer'), mapOptions);
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+  </head>
+  <body>
+      <div id="mapcontainer">
+      </div>
+  </body>
+</html>
